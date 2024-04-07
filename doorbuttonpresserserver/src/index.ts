@@ -82,7 +82,7 @@ function getBody(request: http.IncomingMessage): Promise<string> {
 const delay = (ms?: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function moveServo() {
-  motor.servoWrite(500);
-  await delay(2000);
   motor.servoWrite(2500);
+  await delay(2000);
+  motor.servoWrite(500);
 }
