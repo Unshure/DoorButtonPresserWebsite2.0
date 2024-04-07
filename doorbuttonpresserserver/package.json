@@ -1,0 +1,40 @@
+{
+  "dependencies":{
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.95",
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5",
+    "typescript": "^5.4.4"
+  },
+  "name": "doorbuttonpresserwebsite2.0",
+  "version": "1.0.0",
+  "description": "Website to open your front door",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc",
+    "server": "node ./build/index.js",
+    "clean": "rm -rf ./build",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unshure/DoorButtonPresserWebsite2.0.git"
+  },
+  "author": "Nick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unshure/DoorButtonPresserWebsite2.0/issues"
+  },
+  "homepage": "https://github.com/Unshure/DoorButtonPresserWebsite2.0#readme"
+}
