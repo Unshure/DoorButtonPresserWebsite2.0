@@ -1,4 +1,5 @@
 import * as http from 'http';
+import { Gpio } from 'pigpio';
 
 // Check passcode:
 if (process.env.PASSCODE === undefined) {
@@ -7,6 +8,14 @@ if (process.env.PASSCODE === undefined) {
 }
 const PASSCODE: string = process.env.PASSCODE;
 
+
+// Check passcode:
+let ENABLE_SERVO: boolean = false;
+let motor: Gpio;
+if (process.env.ENABLE_SERVO !== undefined) {
+  ENABLE_SERVO = true;
+  motor = new Gpio(12, {mode: Gpio.OUTPUT});
+}
 
 // Listen on port 3000
 let port: number = 3000;
@@ -37,6 +46,9 @@ const server = http.createServer(async (req: http.IncomingMessage, res: http.Ser
       if ('passcode' in passcodeJson && typeof passcodeJson.passcode === 'string' && passcodeJson.passcode === PASSCODE) {
         console.log("Correct passcode!");
         res.writeHead(200);
+        if (ENABLE_SERVO) {
+          moveServo();
+        }
       } else {
         console.log("Incorrect passcode!");
         res.writeHead(401);
@@ -65,4 +77,12 @@ function getBody(request: http.IncomingMessage): Promise<string> {
       resolve(body)
     });
   });
+}
+
+const delay = (ms?: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function moveServo() {
+  motor.servoWrite(500);
+  await delay(2000);
+  motor.servoWrite(2500);
 }
