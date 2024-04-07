@@ -17,12 +17,12 @@ if (process.env.ENABLE_SERVO !== undefined) {
   motor = new Gpio(12, {mode: Gpio.OUTPUT});
 }
 
-// Listen on port 3000
-let port: number = 3000;
-if (process.argv.length > 1) {
+// Listen on port 4000
+let port: number = 4000;
+if (process.argv.length > 2) {
   port = parseInt(process.argv[2]);
   if (isNaN(port) || port < 0 || port > 65535) {
-    console.log("Enter a valid port number between 0 and 65535, or omit to default to 3000");
+    console.log("Enter a valid port number between 0 and 65535, or omit to default to 4000");
     process.exit(0);
   }
 }
@@ -82,7 +82,7 @@ function getBody(request: http.IncomingMessage): Promise<string> {
 const delay = (ms?: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function moveServo() {
-  motor.servoWrite(2500);
+  motor.servoWrite(700);
   await delay(2000);
-  motor.servoWrite(500);
+  motor.servoWrite(2200);
 }
