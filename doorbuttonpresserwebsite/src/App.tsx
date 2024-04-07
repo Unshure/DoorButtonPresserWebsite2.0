@@ -11,7 +11,7 @@ function App() {
     setLoading(true);
     
     try {
-      const response = await fetch('http://localhost:4000/open-door', {
+      const response = await fetch('/open-door', {
         mode: 'cors',
         method: 'POST',
         headers: {
