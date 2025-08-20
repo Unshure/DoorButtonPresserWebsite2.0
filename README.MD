@@ -11,3 +11,5 @@ sudo apt-get install git
 ```bash
 git clone https://github.com/Unshure/DoorButtonPresserWebsite2.0.git ./doorbuttonpresser
 ```
+
+![image info](./pizero_gpio.jpg)
