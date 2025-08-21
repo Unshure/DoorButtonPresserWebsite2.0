@@ -102,3 +102,4 @@ sudo systemctl status rc-local
 
 ![image info](./pizero_gpio.jpg)
 
+![image info](./MG995-Servo-Pinout.png)
