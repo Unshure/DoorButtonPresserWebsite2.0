@@ -41,7 +41,7 @@ cd ..
 sudo apt install nginx certbot python3-certbot-nginx -y
 ```
 
-### Copy nginx config into: `/etc/nginx/sites-available/doorbuttonpresser.com`
+### Copy nginx config into: `/etc/nginx/sites-available/unshure.duckdns.org`
 ```
 server {
     listen 80;
@@ -66,6 +66,9 @@ server {
     }
 }
 ```
+
+### Set up port forwarding on your router
+https://mynetworksettings.com/#/basic/home
 
 ### Setup nginx certificates and file permissions
 ```
@@ -103,4 +106,5 @@ sudo systemctl status rc-local
 ![image info](./pizero_gpio.jpg)
 
 ![image info](./MG995-Servo-Pinout.png)
+
 
