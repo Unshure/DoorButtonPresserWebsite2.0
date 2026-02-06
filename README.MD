@@ -21,8 +21,8 @@ sudo apt remove nodejs npm -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 echo "export NVM_NODEJS_ORG_MIRROR=https://unofficial-builds.nodejs.org/download/release" >> ~/.bashrc
 source ~/.bashrc
-nvm install --lts
-nvm use --lts
+nvm install 22
+nvm use 22
 node -v
 npm -v
 ```
@@ -103,3 +103,4 @@ sudo systemctl status rc-local
 ![image info](./pizero_gpio.jpg)
 
 ![image info](./MG995-Servo-Pinout.png)
+
